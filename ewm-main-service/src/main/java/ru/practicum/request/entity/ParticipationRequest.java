@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import ru.practicum.event.entity.Event;
 import ru.practicum.request.entity.enums.ParticipationRequestStatus;
-import ru.practicum.user.model.User;
+import ru.practicum.user.entity.User;
 
 import java.time.LocalDateTime;
 

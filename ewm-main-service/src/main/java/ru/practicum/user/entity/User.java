@@ -1,4 +1,4 @@
-package ru.practicum.user.model;
+package ru.practicum.user.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;

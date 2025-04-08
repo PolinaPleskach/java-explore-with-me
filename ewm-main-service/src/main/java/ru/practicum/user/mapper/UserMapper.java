@@ -3,7 +3,7 @@ package ru.practicum.user.mapper;
 import org.springframework.stereotype.Component;
 import ru.practicum.user.dto.UserRequestDto;
 import ru.practicum.user.dto.UserResponseDto;
-import ru.practicum.user.model.User;
+import ru.practicum.user.entity.User;
 
 import java.util.List;
 import java.util.stream.Collectors;

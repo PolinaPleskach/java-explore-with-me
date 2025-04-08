@@ -15,7 +15,7 @@ import ru.practicum.request.entity.ParticipationRequest;
 import ru.practicum.request.entity.enums.ParticipationRequestStatus;
 import ru.practicum.request.mapper.ParticipationRequestMapper;
 import ru.practicum.user.dao.UserRepository;
-import ru.practicum.user.model.User;
+import ru.practicum.user.entity.User;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

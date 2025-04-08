@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import ru.practicum.category.entity.Category;
 import ru.practicum.event.entity.Event;
 import ru.practicum.event.entity.enums.EventState;
-import ru.practicum.user.model.User;
+import ru.practicum.user.entity.User;
 
 import java.time.LocalDateTime;
 import java.util.List;

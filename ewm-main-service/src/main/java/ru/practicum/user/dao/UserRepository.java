@@ -2,7 +2,7 @@ package ru.practicum.user.dao;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.practicum.user.model.User;
+import ru.practicum.user.entity.User;
 
 import java.util.List;
 
