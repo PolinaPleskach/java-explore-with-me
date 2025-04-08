@@ -3,7 +3,7 @@ package ru.practicum.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import ru.practicum.responseDto;
+import ru.practicum.ResponseDto;
 import ru.practicum.entity.Stat;
 
 import java.time.LocalDateTime;
@@ -19,7 +19,7 @@ public interface StatsRepository extends JpaRepository<Stat, Long> {
             GROUP BY s.ip, s.uri
             ORDER BY COUNT(DISTINCT s.ip) DESC
             """)
-    List<responseDto> findAllWithUniqueIpWithUris(List<String> uris,
+    List<ResponseDto> findAllWithUniqueIpWithUris(List<String> uris,
                                                   LocalDateTime start,
                                                   LocalDateTime end);
 
@@ -30,7 +30,7 @@ public interface StatsRepository extends JpaRepository<Stat, Long> {
             GROUP BY s.ip, s.uri
             ORDER BY COUNT(DISTINCT s.ip) DESC
             """)
-    List<responseDto> findAllWithUniqueIpWithoutUris(LocalDateTime start,
+    List<ResponseDto> findAllWithUniqueIpWithoutUris(LocalDateTime start,
                                                      LocalDateTime end);
 
     @Query("""
@@ -40,7 +40,7 @@ public interface StatsRepository extends JpaRepository<Stat, Long> {
             GROUP BY s.ip, s.uri
             ORDER BY COUNT (s.ip) DESC
             """)
-    List<responseDto> findAllWithUris(List<String> uris,
+    List<ResponseDto> findAllWithUris(List<String> uris,
                                       LocalDateTime start,
                                       LocalDateTime end);
 
@@ -51,7 +51,7 @@ public interface StatsRepository extends JpaRepository<Stat, Long> {
             GROUP BY s.ip, s.uri
             ORDER BY COUNT (s.ip) DESC
             """)
-    List<responseDto> findAllWithoutUris(LocalDateTime start,
+    List<ResponseDto> findAllWithoutUris(LocalDateTime start,
                                          LocalDateTime end);
 
 }

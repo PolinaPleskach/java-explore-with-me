@@ -7,8 +7,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import ru.practicum.requestDto;
-import ru.practicum.responseDto;
+import ru.practicum.RequestDto;
+import ru.practicum.ResponseDto;
 import ru.practicum.service.StatsService;
 
 import java.time.LocalDateTime;
@@ -23,23 +23,23 @@ public class StatsController {
 
     @PostMapping("/hit")
     @ResponseStatus(HttpStatus.CREATED)
-    public requestDto createStat(@RequestBody @Valid requestDto requestDto) {
+    public RequestDto createStat(@RequestBody @Valid RequestDto requestDto) {
         log.info("Пришел POST запрос /hit с телом: {}", requestDto);
-        requestDto createdStat = statsService.createStat(requestDto);
+        RequestDto createdStat = statsService.createStat(requestDto);
         log.info("Отправлен ответ /items с телом: {}", createdStat);
         return createdStat;
     }
 
     @GetMapping("/stats")
     @ResponseStatus(HttpStatus.OK)
-    public List<responseDto> getStats(
+    public List<ResponseDto> getStats(
             @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime start,
             @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime end,
             @RequestParam(required = false) List<String> uris,
             @RequestParam(defaultValue = "false") Boolean unique) {
         log.info("Пришел GET запрос /stats с параметрами: start={}, end={}, uris={}, unique={}",
                 start, end, uris, unique);
-        List<responseDto> stats = statsService.getStats(start, end, uris, unique);
+        List<ResponseDto> stats = statsService.getStats(start, end, uris, unique);
         log.info("Отправлен ответ /stats с телом: {}", stats);
         return stats;
     }

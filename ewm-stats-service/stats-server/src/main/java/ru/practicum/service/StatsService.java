@@ -1,13 +1,13 @@
 package ru.practicum.service;
 
-import ru.practicum.requestDto;
-import ru.practicum.responseDto;
+import ru.practicum.RequestDto;
+import ru.practicum.ResponseDto;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 public interface StatsService {
-    requestDto createStat(requestDto statRequestDto);
+    RequestDto createStat(RequestDto statRequestDto);
 
-    List<responseDto> getStats(LocalDateTime start, LocalDateTime end, List<String> uris, Boolean unique);
+    List<ResponseDto> getStats(LocalDateTime start, LocalDateTime end, List<String> uris, Boolean unique);
 }
