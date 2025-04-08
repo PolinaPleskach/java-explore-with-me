@@ -28,8 +28,8 @@ public class StatsClient extends BaseClient {
         );
     }
 
-    public ResponseEntity<Object> hit(DtoInput dtoInput) {
-        return post("/hit", dtoInput);
+    public ResponseEntity<Object> hit(requestDto requestDto) {
+        return post("/hit", requestDto);
     }
 
     public ResponseEntity<Object> getStats(String start, String end,

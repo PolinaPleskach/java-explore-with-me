@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
-public class DtoInput {
+public class requestDto {
     @NotBlank
     @Size(max = 255)
     private String app;

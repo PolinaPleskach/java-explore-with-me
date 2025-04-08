@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DtoOutput {
+public class responseDto {
     private String app;
     private String uri;
     private Long hits;

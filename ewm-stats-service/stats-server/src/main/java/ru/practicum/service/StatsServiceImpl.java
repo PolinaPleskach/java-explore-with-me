@@ -3,8 +3,8 @@ package ru.practicum.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.practicum.DtoInput;
-import ru.practicum.DtoOutput;
+import ru.practicum.requestDto;
+import ru.practicum.responseDto;
 import ru.practicum.dao.StatsRepository;
 import ru.practicum.entity.Stat;
 import ru.practicum.exception.ValidationException;
@@ -20,14 +20,14 @@ public class StatsServiceImpl implements StatsService {
     private final StatsRepository statsRepository;
 
     @Override
-    public DtoInput createStat(DtoInput dtoInput) {
-        Stat stat = statsRepository.save(StatsMapper.INSTANCE.toStats(dtoInput));
+    public requestDto createStat(requestDto requestDto) {
+        Stat stat = statsRepository.save(StatsMapper.INSTANCE.toStats(requestDto));
         return StatsMapper.INSTANCE.toStatsDtoInput(stat);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public List<DtoOutput> getStats(LocalDateTime start, LocalDateTime end, List<String> uris, Boolean unique) {
+    public List<responseDto> getStats(LocalDateTime start, LocalDateTime end, List<String> uris, Boolean unique) {
 
         if (start.isAfter(end)) {
             throw new ValidationException("Дата начала и дата окончания не могут быть равны друг другу.");
