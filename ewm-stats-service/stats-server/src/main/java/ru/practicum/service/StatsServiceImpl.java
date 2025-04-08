@@ -21,8 +21,8 @@ public class StatsServiceImpl implements StatsService {
 
     @Override
     public RequestDto createStat(RequestDto requestDto) {
-        Stat stat = statsRepository.save(StatsMapper.INSTANCE.toStats(requestDto));
-        return StatsMapper.INSTANCE.toStatsDtoInput(stat);
+        Stat stat = statsRepository.save(StatsMapper.INSTANCE.mapToStats(requestDto));
+        return StatsMapper.INSTANCE.mapToStatsRequestDto(stat);
     }
 
     @Override

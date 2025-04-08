@@ -9,7 +9,7 @@ import ru.practicum.entity.Stat;
 public interface StatsMapper {
     StatsMapper INSTANCE = Mappers.getMapper(StatsMapper.class);
 
-    Stat toStats(RequestDto statRequestDto);
+    Stat mapToStats(RequestDto statRequestDto);
 
-    RequestDto toStatsDtoInput(Stat stat);
+    RequestDto mapToStatsRequestDto(Stat stat);
 }
