@@ -3,6 +3,7 @@ package ru.practicum.exception;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -11,6 +12,12 @@ import java.util.Map;
 
 @RestControllerAdvice
 public class ErrorHandler {
+    @ExceptionHandler(MissingServletRequestParameterException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public Map<String, String> handleMissingParam(MissingServletRequestParameterException e) {
+        return Map.of("error", "Parameter '" + e.getParameterName() + "' is missing or invalid");
+    }
+
     @ExceptionHandler({MethodArgumentNotValidException.class, ConstraintViolationException.class, ValidationException.class})
     @ResponseStatus(HttpStatus.BAD_REQUEST) //400
     public Map<String, String> handleValidation(Exception e) {
