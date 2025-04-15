@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.compilation.dto.CompilationResponseDto;
-import ru.practicum.compilation.service.CompilationServiceImpl;
+import ru.practicum.compilation.service.CompilationService;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping("/compilations")
 public class CompilationControllerPublic {
 
-    private final CompilationServiceImpl compilationService;
+    private final CompilationService compilationService;
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
