@@ -5,8 +5,8 @@ import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.Nulls;
 import jakarta.validation.constraints.*;
 import lombok.Data;
-import ru.practicum.event.entity.enums.EventState;
 import ru.practicum.event.entity.Location;
+import ru.practicum.event.entity.enums.EventState;
 
 import java.time.LocalDateTime;
 

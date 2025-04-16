@@ -10,11 +10,11 @@ import ru.practicum.compilation.dao.CompilationRepository;
 import ru.practicum.compilation.dto.CompilationRequestDto;
 import ru.practicum.compilation.dto.CompilationResponseDto;
 import ru.practicum.compilation.dto.UpdateCompilationDto;
-import ru.practicum.compilation.mapper.CompilationMapper;
 import ru.practicum.compilation.entity.Compilation;
+import ru.practicum.compilation.mapper.CompilationMapper;
 import ru.practicum.event.dao.EventRepository;
-import ru.practicum.event.mapper.EventMapper;
 import ru.practicum.event.entity.Event;
+import ru.practicum.event.mapper.EventMapper;
 import ru.practicum.exception.NotFoundException;
 
 import java.util.ArrayList;

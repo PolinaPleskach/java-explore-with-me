@@ -8,8 +8,8 @@ import ru.practicum.exception.DuplicatedDataException;
 import ru.practicum.user.dao.UserRepository;
 import ru.practicum.user.dto.UserRequestDto;
 import ru.practicum.user.dto.UserResponseDto;
-import ru.practicum.user.mapper.UserMapper;
 import ru.practicum.user.entity.User;
+import ru.practicum.user.mapper.UserMapper;
 
 import java.util.List;
 import java.util.Objects;

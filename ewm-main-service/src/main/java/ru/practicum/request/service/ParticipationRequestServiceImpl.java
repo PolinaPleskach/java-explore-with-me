@@ -11,9 +11,9 @@ import ru.practicum.exception.ConflictException;
 import ru.practicum.exception.NotFoundException;
 import ru.practicum.request.dao.ParticipationRequestRepository;
 import ru.practicum.request.dto.ParticipationRequestDto;
-import ru.practicum.request.mapper.ParticipationRequestMapper;
 import ru.practicum.request.entity.ParticipationRequest;
 import ru.practicum.request.entity.enums.ParticipationRequestStatus;
+import ru.practicum.request.mapper.ParticipationRequestMapper;
 import ru.practicum.user.dao.UserRepository;
 import ru.practicum.user.entity.User;
 
